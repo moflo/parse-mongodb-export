@@ -11,6 +11,7 @@ Why?
 Native Parse.com JSON file export is incompatible with Mongolab import. This utility can help refactor the Parse JSON format to a format which is compatible with Mongolab JSON schemes to help preserve objectId and date formats.
 
 Converts Parse JSON from this:
+
     { "results": [
     	{
             "automaticUser": true,
@@ -25,7 +26,9 @@ Converts Parse JSON from this:
         },
         ...
 
+
 To this JSON format which is compatible with Mongolab JSON import:
+
     [
       {
             "automaticUser": true,
