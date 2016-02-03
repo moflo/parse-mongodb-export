@@ -23,13 +23,13 @@ Installation
 API
 ---
 
-Usage: index [options]
+    Usage: index [options]
 
-Options:
+    Options:
 
-  -h, --help           output usage information
-  -V, --version        output the version number
-  -p, --peppers        Add peppers
-  -P, --pineapple      Add pineapple
-  -b, --bbq-sauce      Add bbq sauce
-  -c, --cheese [type]  Add the specified type of cheese [marble]
+      -h, --help           output usage information
+      -V, --version        output the version number
+      -p, --peppers        Add peppers
+      -P, --pineapple      Add pineapple
+      -b, --bbq-sauce      Add bbq sauce
+      -c, --cheese [type]  Add the specified type of cheese [marble]
