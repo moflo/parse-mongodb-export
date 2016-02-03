@@ -3,8 +3,7 @@ Node.js - parse-mongodb-export
 
 Parse JSON file migration tool for Mongolab.
 
-[![build status](https://secure.travis-ci.org/moflo/node-parse-mongodb-export.svg)](http://travis-ci.org/moflo/node-parse-mongodb-export)
-
+[![Build Status](https://travis-ci.org/moflo/parse-mongodb-export.svg?branch=master)](https://travis-ci.org/moflo/parse-mongodb-export)
 
 Why?
 ----
