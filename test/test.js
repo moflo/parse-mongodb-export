@@ -7,7 +7,7 @@ var pme = require('../')
 
 /* global describe it beforeEach afterEach */
 
-describe('jsonfile', function () {
+describe('parse-mongodb-export', function () {
   var TEST_DIR
 
   beforeEach(function (done) {
@@ -22,8 +22,8 @@ describe('jsonfile', function () {
   })
 
   describe('spaces', function () {
-    it('should default to null', function () {
-      assert.strictEqual(pme.spaces, null)
+    it('should default to undefined', function () {
+      assert.strictEqual(pme.spaces, undefined)
     })
   })
 })
