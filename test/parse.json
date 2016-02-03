@@ -1,0 +1,38 @@
+{ "results": [
+	{
+        "automaticUser": true,
+        "avatar_url": "",
+        "createdAt": "2014-01-13T12:11:47.185Z",
+        "didBuyCredits": false,
+        "isActive": true,
+        "objectId": "08Veg3yCrp",
+        "sessionToken": "gtpxhasvhst8frlo7h6f79z02rw",
+        "tokens": 2,
+        "updatedAt": "2014-01-13T14:52:14.141Z",
+        "username": "ChunkyGoat3803"
+    },
+	{
+        "automaticUser": true,
+        "avatar_url": "",
+        "createdAt": "2013-11-21T21:47:32.402Z",
+        "didBuyCredits": false,
+        "isActive": true,
+        "objectId": "0Cr9vJh32h",
+        "sessionToken": "b3lda9r8g4p8kkj35theuwly8",
+        "tokens": 2,
+        "updatedAt": "2013-11-21T21:48:06.287Z",
+        "username": "LoudSnake4233"
+    },
+	{
+        "automaticUser": true,
+        "avatar_url": "",
+        "createdAt": "2013-10-04T10:53:35.164Z",
+        "isActive": true,
+        "objectId": "5JKIjVGwXB",
+        "sessionToken": "s3ps06g46entpKiLtiric7ogs",
+        "tokens": 2,
+        "updatedAt": "2013-10-05T21:29:38.301Z",
+        "username": "ThinHampster4143"
+    }
+	]
+}

@@ -9,22 +9,26 @@ var jsonfile = require('jsonfile')
 
 pme
   .version('0.1.0')
-  .option('-dir, --directory [name]', 'Directory of Parse JSON files [parse_json]', 'parse_json')
-  .option('-b, --verbose', 'Use verbose mode')
+  .option('-f, --file [name]', 'Parse JSON file to convert for export [parse.json]', 'parse.json')
+  .option('-o, --out [name]', 'Output file name for converted JSON [out.json]', 'out.json')
+  .option('-r, --results [name]', 'Name of Parse results field ["results"]', 'results')
+  .option('-v, --verbose', 'Use verbose mode')
   .parse(process.argv)
 
 console.log('Runnding parse-mongodb-export:')
 if (pme.verbose) console.log('  - verbose')
-console.log('  - %s directory', pme.directory)
+console.log('  - %s JSON file', pme.file)
 
-var file = '../_User.json'
+var file = './' + pme.file
 jsonfile.readFile(file, function (err, obj) {
-  console.log(err)
-  console.log(obj[0])
-  console.log(obj[1])
+  if (err) { console.error(err); return 0 }
+  if (pme.verbose) console.log(obj['results'])
 
-  var ofile = '../out.json'
-  var obj1 = obj[1]
+  var ofile = pme.out
+  var resultsName = pme.results
+  var parseArray = obj[resultsName]
+  if (parseArray === undefined) { console.error('No results object found. Use -r to specify.'); return 0 }
+  var obj1 = parseArray[1]
 
   jsonfile.writeFile(ofile, obj1, function (err) {
     console.error(err)

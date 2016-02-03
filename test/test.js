@@ -13,7 +13,10 @@ describe('parse-mongodb-export', function () {
   beforeEach(function (done) {
     TEST_DIR = path.join(os.tmpdir(), 'pme-tests')
     rimraf(TEST_DIR, function () {
-      fs.mkdir(TEST_DIR, done)
+      fs.mkdir(TEST_DIR, function () {
+        fs.createReadStream('./test/parse.json').pipe(fs.createWriteStream(TEST_DIR + '/parse.json'))
+        done()
+      })
     })
   })
 
@@ -21,9 +24,9 @@ describe('parse-mongodb-export', function () {
     rimraf(TEST_DIR, done)
   })
 
-  describe('spaces', function () {
+  describe('empty', function () {
     it('should default to undefined', function () {
-      assert.strictEqual(pme.spaces, undefined)
+      assert.strictEqual(pme.empty, undefined)
     })
   })
 })
