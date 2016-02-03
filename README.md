@@ -11,7 +11,42 @@ Why?
 
 Native Parse.com JSON file export is incompatible with Mongolab import. This utility can help refactor the Parse JSON format to a format which is compatible with Mongolab JSON schemes to help preserve objectId and date formats.
 
+Converts Parse JSON from this:
+    { "results": [
+    	{
+            "automaticUser": true,
+            "avatar_url": "",
+            "createdAt": "2014-01-13T12:11:47.185Z",
+            "didBuyCredits": false,
+            "isActive": true,
+            "objectId": "08Ve1yyCrp",
+            "tokens": 2,
+            "updatedAt": "2014-01-13T14:52:14.141Z",
+            "username": "ChunkyGoat3803"
+        },
+        ...
 
+To this JSON format which is compatible with Mongolab JSON import:
+    [
+      {
+            "automaticUser": true,
+            "avatar_url": "",
+            "created_at": {
+              "$date" : "2014-01-13T12:11:47.185Z"
+              },
+            "didBuyCredits": false,
+            "isActive": true,
+            "_id": "08Ve1yyCrp",
+            "tokens": 2,
+            "updated_at": {
+              "$date": "2014-01-13T14:52:14.141Z"
+              },
+            "username": "ChunkyGoat3803"
+        },
+        ...
+        ]
+
+___
 
 Installation
 ------------
