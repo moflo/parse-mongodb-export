@@ -4,7 +4,7 @@
   "description": "Parse JSON file Mongolab database import tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard && mocha"
   },
   "keywords": [
     "parse",
@@ -16,5 +16,10 @@
   "dependencies": {
     "commander": "^2.9.0",
     "jsonfile": "^2.2.3"
+  },
+  "devDependencies": {
+    "mocha": "2.x",
+    "rimraf": "^2.4.0",
+    "standard": "4.x"
   }
 }
