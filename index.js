@@ -10,7 +10,7 @@ var pme = require('commander')
 var jsonfile = require('jsonfile')
 
 pme
-  .version('0.1.0')
+  .version('0.1.1')
   .option('-f, --file [name]', 'Parse JSON file to convert for export [parse.json]', 'parse.json')
   .option('-o, --out [name]', 'Output file name for converted JSON [out.json]', 'out.json')
   .option('-r, --results [name]', 'Name of Parse results field ["results"]', 'results')

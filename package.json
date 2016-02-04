@@ -1,6 +1,6 @@
 {
   "name": "parse-mongodb-export",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse JSON file Mongolab database import tool",
   "repository": {
     "type": "git",
