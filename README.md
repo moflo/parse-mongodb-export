@@ -58,7 +58,13 @@ Installation
 Usage
 -----
 
+Convert the JSON exported from Parse using the command:
+
     parse-mongodb-export -f parse.json -o parse-mongolab.json
+
+Then import the resulting JSON into a Mongolab collection using the `mongoimport` tool:
+
+    mongoimport -h ab123456.mongolab.com:12345 -d heroku_12345 -u user -p password -c User --jsonArray --file parse-mongolab.json
 
 
 API
