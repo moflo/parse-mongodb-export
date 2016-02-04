@@ -7,6 +7,9 @@
     "url": "git@github.com:moflo/parse-mongodb-export.git"
   },
   "main": "index.js",
+  "bin": {
+    "parse-mongodb-export": "bin/index.js"
+  }
   "scripts": {
     "test": "standard && mocha"
   },
