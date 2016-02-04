@@ -15,22 +15,49 @@ pme
   .option('-v, --verbose', 'Use verbose mode')
   .parse(process.argv)
 
-console.log('Runnding parse-mongodb-export:')
+if (pme.verbose) console.log('Runnding parse-mongodb-export:')
 if (pme.verbose) console.log('  - verbose')
-console.log('  - %s JSON file', pme.file)
+if (pme.verbose) console.log('  - %s JSON file', pme.file)
 
 var file = './' + pme.file
 jsonfile.readFile(file, function (err, obj) {
   if (err) { console.error(err); return 0 }
-  if (pme.verbose) console.log(obj['results'])
 
   var ofile = pme.out
   var resultsName = pme.results
   var parseArray = obj[resultsName]
   if (parseArray === undefined) { console.error('No results object found. Use -r to specify.'); return 0 }
-  var obj1 = parseArray[1]
+  if (pme.verbose) console.log(' - parseArray:')
+  if (pme.verbose) console.log(parseArray)
+  if (pme.verbose) console.log(' - parseItem:')
 
-  jsonfile.writeFile(ofile, obj1, function (err) {
-    console.error(err)
+  var newArray = []
+  for (var i = 0, size = parseArray.length; i < size; i++) {
+    var parseItem = parseArray[i]
+    if (pme.verbose) console.log(i)
+    if (pme.verbose) console.log(parseItem)
+
+    var keys = Object.keys(parseItem)
+    for (var j = 0, count = keys.length; j < count; j++) {
+      var parseField = keys[j]
+      if (pme.verbose) console.log(parseField)
+
+      if (parseField === 'objectId') {
+        parseItem['_id'] = parseItem['objectId']
+      }
+      if (parseField === 'createdAt') {
+        parseItem['created_at'] = { '$date': parseItem['createdAt'] }
+      }
+      if (parseField === 'updatedAt') {
+        parseItem['updated_at'] = { '$date': parseItem['updatedAt'] }
+      }
+    }
+    newArray.push(parseItem)
+  }
+
+  if (pme.verbose) console.log(newArray)
+
+  jsonfile.writeFile(ofile, newArray, function (err) {
+    if (err) { console.error(err); return 0 }
   })
 })
