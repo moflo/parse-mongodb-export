@@ -55,7 +55,11 @@ Installation
 
     npm install parse-mongodb-export
 
+Usage
+-----
 
+    parse-mongodb-export -f parse.jsom -o parse-mongolab.json
+    
 
 API
 ---
@@ -64,7 +68,9 @@ API
 
     Options:
 
-      -h, --help                output usage information
-      -V, --version             output the version number
-      -dir, --directory [name]  Directory of Parse JSON files [parse_json]
-      -b, --verbose             Use verbose mode
+    -h, --help            output usage information
+    -V, --version         output the version number
+    -f, --file [name]     Parse JSON file to convert for export [parse.json]
+    -o, --out [name]      Output file name for converted JSON [out.json]
+    -r, --results [name]  Name of Parse results field ["results"]
+    -v, --verbose         Use verbose mode
