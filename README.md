@@ -58,8 +58,8 @@ Installation
 Usage
 -----
 
-    parse-mongodb-export -f parse.jsom -o parse-mongolab.json
-    
+    parse-mongodb-export -f parse.json -o parse-mongolab.json
+
 
 API
 ---
