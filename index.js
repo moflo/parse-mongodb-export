@@ -45,13 +45,16 @@ jsonfile.readFile(file, function (err, obj) {
       if (pme.verbose) console.log(parseField)
 
       if (parseField === 'objectId') {
-        parseItem['_id'] = parseItem['objectId']
+        parseItem['_id'] = parseItem['objectId'];
+        delete parseItem['objectId'];
       }
       if (parseField === 'createdAt') {
-        parseItem['created_at'] = { '$date': parseItem['createdAt'] }
+        parseItem['_created_at'] = { '$date': parseItem['createdAt'] };
+        delete parseItem['createdAt'];
       }
       if (parseField === 'updatedAt') {
-        parseItem['updated_at'] = { '$date': parseItem['updatedAt'] }
+        parseItem['_updated_at'] = { '$date': parseItem['updatedAt'] };
+        delete parseItem['updatedAt'];
       }
     }
     newArray.push(parseItem)
